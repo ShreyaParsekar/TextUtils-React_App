@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  
+  Navigate
 } from "react-router-dom";
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
     <Alert alert={alert}/>
     
     <Routes>
-          
+    <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="/features" element={<Features mode={mode}/>} />
           
           <Route path="/" element={<TextForm heading="Enter your text" showalert={showalert} mode={mode}/>} />
